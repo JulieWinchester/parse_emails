@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "user_key": "a",
+      "text":"user1@email.com"
+    },
+    {
+      "id": 2,
+      "user_key":"b",
+      "text":"user2@email.com"
+    },
+    {
+      "id": 3,
+      "user_key":"c",
+      "text":"user3@email.com"
+    }
+  ]
+}
