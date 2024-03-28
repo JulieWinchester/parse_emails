@@ -19,8 +19,19 @@ def main(argv):
     users = data['users']
     emails = [user['text'] for user in users]
     with open(args.output, "w") as txt_file:
-        for email in emails:
-            txt_file.write(email + "\n")
+        for user in data['users']:
+            user_text = user['text']
+
+            if '(' in user_text and ')' in user_text:
+                # Name (email)
+                name = user_text.rpartition('(')[0].strip()
+                email = user_text.rpartition('(')[-1].strip(')')
+                line = f'{email} {name}'
+            else:
+                # Email
+                line = user_text
+
+            txt_file.write(line + "\n")
 
 if __name__ == '__main__':
     main(argv)
